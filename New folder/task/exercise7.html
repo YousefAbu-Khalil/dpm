@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        <select id="flag">
+          <option value="palestine">palestine</option>
+          <option value="jordan">jordan</option>
+          <option value="iraq">iraq</option>
+        </select>
+      </div>
+      <div>
+        <img id="img" src="images/download.png" />
+      </div>
+    </div>
+    <script>
+      var select = document.getElementById("flag");
+      var image = document.getElementById("img");
+      select.addEventListener("change", (event) => {
+        if (event.target.value === "palestine")
+          image.src = "images/download.png";
+        else if (event.target.value === "jordan")
+          image.src = "images/download (2).png";
+        else if (event.target.value === "iraq")
+          image.src = "images/download (1).png";
+      });
+    </script>
+  </body>
+</html>

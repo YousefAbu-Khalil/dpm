@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      Exercise #5: Input check for minimmum number of charecter should be 6 and
+      password match in both input
+    </title>
+    <style>
+      * {
+        font-family: Arial, sans-serif;
+      }
+
+      .err {
+        color: red;
+        font-size: 0.7em;
+      }
+    </style>
+    <script>
+      function checkie(form) {
+        var password1=form.password1.value;
+        var password2=form.password2.value;
+        var valid=true;
+        document.getElementById("pw1_check");
+        document.getElementById("pw2_check");
+
+        if (password1.length < 6) {
+        document.getElementById("pw1_check").innerHTML = "Password must be at least 6 characters long.";
+        valid = false;
+    }
+
+    if (password1 !== password2) {
+        document.getElementById("pw2_check").innerHTML = "Passwords do not match.";
+        valid = false;
+    }
+
+    return valid;
+}
+    </script>
+  </head>
+  <body>
+    <form name="pw" onsubmit=" return checkie(this)">
+      <table>
+        <tr>
+          <td>Password (min 6 characters):</td>
+          <td>
+            <input
+              type="password"
+              name="password1"
+              id="password1"
+              size="10"
+              placeholder="Password"
+            />
+          </td>
+          <td>
+            <div id="pw1_check" class="err"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>Repeat password:</td>
+          <td>
+            <input
+              type="password"
+              name="password2"
+              id="password2"
+              size="10"
+              placeholder="Password"
+            />
+          </td>
+          <td>
+            <div id="pw2_check" class="err"></div>
+          </td>
+        </tr>
+      </table>
+
+      <input type="submit" value="Submit" id="submitBtn" />
+    </form>
+  </body>
+</html>
